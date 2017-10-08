@@ -1,7 +1,7 @@
 <% include partials/header.ejs %>
 
 <form method="get" action="/">
-    <input class="search" type="text" placeholder="Search Your Movie and TV shows.." name="search">
+    <input class="search" id="search" value="<%= pageInfo.search%>" type="text" placeholder="Search Your Movie and TV shows.." name="search">
     <button class="submit" type="submit">Search</button>
 </form>
 
@@ -25,12 +25,13 @@
 </div>
 
 <div class="page_more">
-    <% if(pageInfo.page>0){%>
-    <a style="float: left;margin-left: 30px" href="/?search=<%= pageInfo.search%>&page=<%= pageInfo.page-1%>">Previous</a>
+    <% if(pageInfo.page>1){%>
+    <a style="float: left;margin: 30px;color: black; font-weight: 300" href="/?search=<%= pageInfo.search%>&page=<%= pageInfo.page-1%>"><%="<< "%>Previous</a>
     <%} else{%>
-    <a style="float: left;color: grey;margin-left: 30px" href="/?search=<%= pageInfo.search%>&page=<%= pageInfo.page%>">Previous</a>
+    <a style="float: left;color: gray;margin: 30px;font-weight: 300" href="/?search=<%= pageInfo.search%>&page=<%= pageInfo.page%>"><%="<< "%>Previous</a>
     <%}%>
-    <a style="float: right;margin-right: 30px" href="/?search=<%= pageInfo.search%>&page=<%= Number(pageInfo.page)+1%>">Next</a>
+    <a style="float: right;margin: 30px; color: black;font-weight: 300" href="/?search=<%= pageInfo.search%>&page=<%= Number(pageInfo.page)+1%>">Next<%=" >>"%></a>
 </div>
+
 
 <% include partials/footer.ejs %>
