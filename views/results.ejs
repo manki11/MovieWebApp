@@ -1,4 +1,4 @@
-<% include partials/header.ejs%>
+<% include partials/header.ejs %>
 
 <form method="get" action="/">
     <input class="search" type="text" placeholder="Search Your Movie and TV shows.." name="search">
@@ -6,17 +6,22 @@
 </form>
 
 <div class="results">
-<% results.forEach(function (movie) { %>
+
+    <% results.forEach(function (movie) { %>
+
     <div class="search-card">
-        <div class="left">
-            <img src="<%= movie.Poster%>" height="240px" width="160px">
-        </div>
-        <div class="right">
-            <p class="title"><%= movie.Title%></p>
-            <p><%= movie.Year%></p>
-        </div>
+        <a href="/id/<%= movie.imdbID %>">
+                <div class="left">
+                    <img src="<%= movie.Poster %>" height="240px" width="160px">
+                </div>
+                <div class="right">
+                    <p class="title"><%= movie.Title %></p>
+                    <p><%= movie.Year %></p>
+                </div>
+        </a>
     </div>
-<%})%>
+
+    <% }) %>
 </div>
 
-<% include partials/footer.ejs%>
+<% include partials/footer.ejs %>

@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <div class="image">
+        <img src="<%= result.Poster %>" height="600px" width="400px">
+    </div>
+    <div class="about">
+        <p id="title_m"><%= result.Title %></p>
+        <p><%= result.Year %></p>
+        <p><%= result.Rated %></p>
+        <p><%= result.Release %></p>
+        <p><%= result.Runtime %></p>
+        <p><%= result.Genre %></p>
+        <p><%= result.Actors %></p>
+        <p><%= result.Plot %></p>
+    </div>
+
+</div>
+
+<% include partials/footer.ejs %>
