@@ -1,0 +1,70 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: 'roboto', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    background: #eeeeee;
+}
+
+h1{
+    font-weight: 400;
+    font-size: 40px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+form{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+
+.search{
+    width: 400px;
+    font-size: 20px;
+    font-weight: 200;
+    margin: 40px 10px;
+    padding: 15px;
+    outline: none;
+    border: none;
+}
+
+.submit{
+    font-size: 20px;
+    margin: 40px 10px;
+    padding: 15px;
+}
+
+.results{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-card{
+    margin: 10px;
+    width: 30%;
+    height: 240px;
+    background: #ffffff;
+}
+
+.title{
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.left{
+    float: left;
+    width: 30%;
+}
+
+.right{
+    float: right;
+    width: 60%;
+}

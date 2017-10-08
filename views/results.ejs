@@ -1,11 +1,22 @@
-<h1>Search Results are:</h1>
+<% include partials/header.ejs%>
 
+<form method="get" action="/">
+    <input class="search" type="text" placeholder="Search Your Movie and TV shows.." name="search">
+    <button class="submit" type="submit">Search</button>
+</form>
 
+<div class="results">
 <% results.forEach(function (movie) { %>
-    <div>
-        <p><%= movie.Title%></p>
-        <p><%= movie.Year%></p>
-        <p><%= movie.Type%></p>
-        <img src="<%= movie.Poster%>" height="300px" width="200px">
+    <div class="search-card">
+        <div class="left">
+            <img src="<%= movie.Poster%>" height="240px" width="160px">
+        </div>
+        <div class="right">
+            <p class="title"><%= movie.Title%></p>
+            <p><%= movie.Year%></p>
+        </div>
     </div>
 <%})%>
+</div>
+
+<% include partials/footer.ejs%>
