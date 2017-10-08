@@ -1,0 +1,11 @@
+<h1>Search Results are:</h1>
+
+
+<% results.forEach(function (movie) { %>
+    <div>
+        <p><%= movie.Title%></p>
+        <p><%= movie.Year%></p>
+        <p><%= movie.Type%></p>
+        <img src="<%= movie.Poster%>" height="300px" width="200px">
+    </div>
+<%})%>
