@@ -24,4 +24,13 @@
     <% }) %>
 </div>
 
+<div class="page_more">
+    <% if(pageInfo.page>0){%>
+    <a style="float: left;margin-left: 30px" href="/?search=<%= pageInfo.search%>&page=<%= pageInfo.page-1%>">Previous</a>
+    <%} else{%>
+    <a style="float: left;color: grey;margin-left: 30px" href="/?search=<%= pageInfo.search%>&page=<%= pageInfo.page%>">Previous</a>
+    <%}%>
+    <a style="float: right;margin-right: 30px" href="/?search=<%= pageInfo.search%>&page=<%= Number(pageInfo.page)+1%>">Next</a>
+</div>
+
 <% include partials/footer.ejs %>

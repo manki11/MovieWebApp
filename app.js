@@ -8,12 +8,24 @@ app.use(express.static("public"));
 
 app.get("/", function (req, res) {
     var search= req.query.search;
-    console.log(search);
-    request("http://www.omdbapi.com/?s="+search+"&apikey=thewdb", function (error, response, body) {
+    var page= req.query.page;
+
+    console.log("current page is"+ page);
+
+    if(page=== undefined){
+        page=1;
+    }
+
+    var pageInfo={
+        search:search,
+        page:page
+    }
+
+    request("http://www.omdbapi.com/?s="+search+"&page="+page+"&apikey=thewdb", function (error, response, body) {
         if(!error && response.statusCode == 200){
             var searchResults= JSON.parse(body);
             var array= searchResults.Search;
-            res.render("results.ejs", {results: array});
+            res.render("results.ejs", {results: array, pageInfo:pageInfo});
         }
     });
 })
