@@ -13,6 +13,21 @@
         <p><%= result.Genre %></p>
         <p><%= result.Actors %></p>
         <p><%= result.Plot %></p>
+
+        <div class="rating-container">
+            <%result.Ratings.forEach(function (rating) {  %>
+                <div class="rating-div">
+                    <%=rating.Value%><br/><br/>
+
+                    <%if(rating.Source =="Internet Movie Database"){%>
+                    <%="IMDb"%>
+                    <%}else{%>
+                    <%=rating.Source%>
+                    <%}%>
+
+                </div>
+            <%})%>
+        </div>
     </div>
 
 </div>
